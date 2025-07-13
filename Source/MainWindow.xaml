@@ -1,0 +1,36 @@
+﻿<Window x:Class="ComboBoxIssueReproduction.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ThemeMode="System"
+        ResizeMode="NoResize"
+        Title="ComboBox Issue Reproduction" Height="400" Width="500">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Margin="8" VerticalAlignment="Top">
+            <TextBlock Text="Reproduction steps:" FontWeight="SemiBold" Margin="0 0 0 4" />
+            <TextBlock Text="Step 1: open combo box" Margin="0 0 0 4" />
+            <TextBlock Text="Step 2: close combo box" Margin="0 0 0 4" />
+            <TextBlock Text="Step 3: check the check box below" Margin="0 0 0 4" />
+            <CheckBox x:Name="resizeCheckBox" Content="Resize combo box" Margin="0 0 0 4" />
+            <TextBlock Text="Step 4: click the button" Margin="0 0 0 4" />
+            <Button Content="Click Here" Click="Button_Click" Margin="0 0 0 4" />
+            <TextBlock Text="Step 5: open combo box" Margin="0 0 0 4" />
+            <TextBlock Text="Step 6: check the number of items" />
+        </StackPanel>
+        <ComboBox x:Name="comboBox" Grid.Row="0" Grid.Column="1" Margin="8" VerticalAlignment="Top" />
+        <StackPanel Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="8">
+            <TextBlock Text="Expected result: two items in the combo box" Margin="0 0 0 4" />
+            <TextBlock Text="Actual result: one item in the combo box" Margin="0 0 0 4" />
+            <TextBlock Text="Workarounds:" Margin="0 12 0 4" />
+            <TextBlock Text="1. Make sure the combo box is not resized during the update." Margin="0 0 0 4" />
+            <TextBlock Text="2. Turn the Fluent theme off." Margin="0 0 0 4" />
+        </StackPanel>
+    </Grid>
+</Window>
